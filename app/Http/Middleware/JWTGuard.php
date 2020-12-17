@@ -19,19 +19,19 @@ class JWTGuard
     public function handle($request, Closure $next)
     {
         try {
-            $token = $request->cookie('access_token');
-            if(empty($token)){
-                return redirect('login');
+            $cookie_name = 'access_token';
+            if (!$request->bearerToken()) {
+                if ($request->hasCookie($cookie_name)) {
+                    $token = $request->cookie($cookie_name);
+                    if(empty($token)){
+                        return redirect('login');
+                    }
+                    $request->headers->add([
+                        'Authorization' => 'Bearer ' . $token
+                    ]);
+                }
             }
-
-            $token = new Token($token);
-            $payload = JWTAuth::decode($token);
-            $user = User::find($payload['sub']);
-            if(empty($user)){
-                return redirect('login');
-            }
-            auth()->login($user);
-            if(auth()->user()->user_status != User::ACTIVE){
+            if(!empty(auth()->user()) && auth()->user()->user_status != User::ACTIVE){
                 return redirect('login')->with('error','User is not active');
             }
             return $next($request);
