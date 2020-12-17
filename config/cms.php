@@ -14,5 +14,6 @@ return [
         'index_{{model}}',
         'delete_{{model}}',
         'create_{{model}}',
-    ]
+    ],
+    'cookie'=>'access_token'
 ];
