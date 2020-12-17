@@ -23,23 +23,14 @@ class JWTGuard
             if (!$request->bearerToken()) {
                 if ($request->hasCookie($cookie_name)) {
                     $token = $request->cookie($cookie_name);
+                    if(empty($token)){
+                        return redirect('login');
+                    }
                     $request->headers->add([
                         'Authorization' => 'Bearer ' . $token
                     ]);
                 }
             }
-            // $token = $request->cookie('access_token');
-            // if(empty($token)){
-            //     return redirect('login');
-            // }
-
-            // $token = new Token($token);
-            // $payload = JWTAuth::decode($token);
-            // $user = User::find($payload['sub']);
-            // if(empty($user)){
-            //     return redirect('login');
-            // }
-            // auth()->login($user);
             if(!empty(auth()->user()) && auth()->user()->user_status != User::ACTIVE){
                 return redirect('login')->with('error','User is not active');
             }
