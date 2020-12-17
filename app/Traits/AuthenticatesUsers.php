@@ -52,7 +52,8 @@ trait AuthenticatesUsers
                 'expires_in' => auth()->factory()->getTTL() * 60
             ]);
         }
-        return redirect('home')->withCookie('access_token',$token);
+        $cookie = Cookie::make('access_token', $token, auth()->factory()->getTTL() * 60);
+        return redirect('home')->withCookie($cookie);
     }
 
 
@@ -63,7 +64,7 @@ trait AuthenticatesUsers
      */
     public function logout(){
         auth()->logout();
-        if(auth('api')->check()){
+        if(config('auth.defaults.guard') == 'api'){
             return response()->json(['message' => 'Successfully logged out']);
         }
         return redirect('/')->withCookie(Cookie::forget('access_token'));
