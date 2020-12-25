@@ -19,8 +19,11 @@ class AuthController extends Controller
         $this->middleware('jwt.guard', ['except' => ['login','showLoginForm']]);
     }
 
-    public function showLoginForm()
+    public function showLoginForm(Request $request)
     {
+        if ($request->bearerToken()) {
+            return redirect('home');
+        }
         return view('auth.login');
     }
 

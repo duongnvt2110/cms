@@ -54,6 +54,7 @@ class PostController extends Controller
     public function show(Post $post,$id)
     {
         //
+
         $post = $post->whereSlug($id)->firstOrFail();
         return view('post.show',compact('post'));
     }
