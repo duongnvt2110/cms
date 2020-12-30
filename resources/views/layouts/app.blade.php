@@ -93,6 +93,7 @@
                 </nav>
                 <main class="py-4">
                     @yield('content')
+                    @include('custom_field.group_field.custom-field')
                 </main>
             </div>
         </div>
