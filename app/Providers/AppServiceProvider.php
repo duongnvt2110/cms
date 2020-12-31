@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\GroupField;
 use App\ItemField;
 use App\LoanApplication;
 use Illuminate\Support\ServiceProvider;
@@ -33,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
         LoanApplication::observe(LoanApplicationObserver::class);
         Blade::if('custom_field', function () {
-            $items = ItemField::get()->first();
-            if(!empty($items)){
+            $groupFields = GroupField::get()->first();
+            if(!empty($groupFields)){
                 return true;
             }
             return false;
