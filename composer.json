@@ -15,6 +15,7 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "spatie/laravel-permission": "^3.17",
+        "tormjens/eventy": "^0.7.0",
         "twbs/bootstrap": "4.0.0",
         "tymon/jwt-auth": "^1.0"
     },

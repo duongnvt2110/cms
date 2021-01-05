@@ -168,6 +168,8 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        TorMorten\Eventy\EventServiceProvider::class,
+        TorMorten\Eventy\EventBladeServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,6 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Eventy' => TorMorten\Eventy\Facades\Events::class
     ],
 
 ];

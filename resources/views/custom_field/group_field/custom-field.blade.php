@@ -9,7 +9,16 @@
                 <label for="Field Title">Field</label>
             </div>
             <div class="card-body">
-                Custom Field
+                @filter('my.hook')
+                @test
+                {{--
+                @foreach($customerField->getFieldItem() as $data)
+                    <div class="form-group">
+                        <label for="Field Title">{{$data['field_label']}}</label>
+                        <input type="{{$data['field_type']}}" name="{{$data['field_name']}}" class="form-control" >
+                    </div>
+                @endforeach
+                --}}
             </div>
         </div>
     </div>

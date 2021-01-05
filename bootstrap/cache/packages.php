@@ -70,6 +70,18 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+  'tormjens/eventy' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'TorMorten\\Eventy\\EventServiceProvider',
+      1 => 'TorMorten\\Eventy\\EventBladeServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Eventy' => 'TorMorten\\Eventy\\Facades\\Events',
+    ),
+  ),
   'tymon/jwt-auth' => 
   array (
     'aliases' => 

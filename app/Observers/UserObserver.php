@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\User;
 use Spatie\Permission\Models\Role;
+use Illuminate\Http\Request;
 
 class UserObserver
 {

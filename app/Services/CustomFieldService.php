@@ -6,7 +6,7 @@ use App\GroupField;
 use App\ItemFiled;
 use Illuminate\Support\Str;
 use App\Mail\EmailRegister;
-
+use App\ItemField;
 
 class CustomFieldService {
 
@@ -21,5 +21,10 @@ class CustomFieldService {
             $data[] = unserialize($groupField->group_rules)[0];
         }
         return collect($data)->pluck('param');
+    }
+
+    public function getFieldItem(){
+        $items = ItemField::get();
+        return $items;
     }
 }
