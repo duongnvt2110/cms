@@ -1,0 +1,17 @@
+{
+    "name": "demo/custom_field",
+    "description": "Demo Test",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Demo\\CustomField\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Demo\\CustomField\\Providers\\CustomFieldServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace Demo\CustomField\Services;
 
-use App\GroupField;
-use App\ItemFiled;
+use Demo\CustomField\Models\GroupField;
+use Demo\CustomField\Models\ItemField;
 use Illuminate\Support\Str;
-use App\Mail\EmailRegister;
-use App\ItemField;
 
 class CustomFieldService {
 

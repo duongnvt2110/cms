@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Listeners;
+namespace Demo\CustomField\Listeners;
 
 use App\Events\CreateContentEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class CreateCustomFieldListener
+class CreateContentListener
 {
     /**
      * Create the event listener.
@@ -27,5 +27,7 @@ class CreateCustomFieldListener
     public function handle(CreateContentEvent $event)
     {
         //
+        dump($event);
+        exit;
     }
 }

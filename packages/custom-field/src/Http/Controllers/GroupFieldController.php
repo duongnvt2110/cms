@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\CustomField;
+namespace Demo\CustomField\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\GroupField;
-use App\ItemField;
+use Demo\CustomField\Models\GroupField;
+use Demo\CustomField\Models\ItemField;
 
 class GroupFieldController extends Controller
 {
     //
     public function index(){
         $groupFields = GroupField::with('items')->get();
-        return view('custom_field.group_field.index',compact('groupFields'));
+        return view('custom_field::custom_field.group_field.index',compact('groupFields'));
     }
 
     public function create(){
-        return view('custom_field.group_field.create');
+        return view('custom_field::custom_field.group_field.create');
     }
 
     public function store(Request $request){
@@ -37,7 +37,7 @@ class GroupFieldController extends Controller
             });
             ItemField::insert($items);
         }
-        return view('custom_field.group_field.create');
+        return view('custom_field::custom_field.group_field.create');
     }
 
     public function buildFieldForm($customFieldForm,$callback){

@@ -27,5 +27,6 @@ class CreateContentListener
     public function handle(CreateContentEvent $event)
     {
         //
+        //dump($event);
     }
 }

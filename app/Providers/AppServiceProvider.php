@@ -37,19 +37,5 @@ class AppServiceProvider extends ServiceProvider
         Eventy::addFilter('my.hook', function() {
             echo '1';
         }, 20, 1);
-        Blade::directive('test', function () {
-            return '<?php
-                echo "<div>";
-                echo "<input type=text>";
-                echo "</div>";
-            ?>';
-        });
-        Blade::if('custom_field', function () {
-            $groupFields = GroupField::get()->first();
-            if(!empty($groupFields)){
-                return true;
-            }
-            return false;
-        });
     }
 }

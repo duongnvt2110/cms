@@ -17,6 +17,13 @@
       0 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
     ),
   ),
+  'demo/custom_field' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Demo\\CustomField\\Providers\\CustomFieldServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

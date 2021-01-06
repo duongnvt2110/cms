@@ -28,7 +28,6 @@ class EventServiceProvider extends ServiceProvider
         ],
         CreateContentEvent::class => [
             CreateContentListener::class,
-            CreateCustomFieldListener::class
         ]
     ];
 

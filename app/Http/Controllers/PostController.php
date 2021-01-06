@@ -6,6 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Filters\PostFilters;
 use Illuminate\Support\Str;
+use App\Events\CreateContentEvent;
 
 class PostController extends Controller
 {
@@ -42,6 +43,7 @@ class PostController extends Controller
         //
         $postForm = $request->only('title','status','content');
         $post->create($postForm);
+        event(new CreateContentEvent($request->all()));
         return redirect()->route('post.index');
     }
 

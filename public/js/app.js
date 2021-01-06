@@ -37330,20 +37330,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-jQuery(function () {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
-  $.ajax({
-    url: 'group_field/getField',
-    type: 'POST',
-    success: function success() {
-      return 1;
-    }
-  });
+/*
+jQuery(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: 'group_field/getField',
+        type: 'POST',
+        success: function(){
+            return 1;
+        }
+    });
 });
+*/
 
 /***/ }),
 

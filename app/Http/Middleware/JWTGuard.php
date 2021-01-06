@@ -36,10 +36,8 @@ class JWTGuard
             }
             return $next($request);
         } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $th) {
-            Cookie::forget('access_token');
             return redirect('login')->withCookie(Cookie::forget('access_token'));
         } catch(\Tymon\JWTAuth\Exceptions\TokenInvalidException $th){
-            Cookie::forget('access_token');
             return redirect('login')->withCookie(Cookie::forget('access_token'));
         }
     }

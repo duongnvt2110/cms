@@ -14,14 +14,15 @@ class CreateContentEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    protected $request;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request)
     {
-        //
+        $this->request = $request;
     }
 
     /**

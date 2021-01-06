@@ -1,3 +1,4 @@
+/*
 jQuery(function() {
     $.ajaxSetup({
         headers: {
@@ -12,3 +13,4 @@ jQuery(function() {
         }
     });
 });
+*/
